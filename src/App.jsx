@@ -2,11 +2,10 @@ import { useState } from 'react'
 import TranslateForm from './components/TranslateForm'
 import ResultsPage from './components/ResultsPage'
 
-// Cloudflare Worker URL — read from Vite env, with the deployed URL as fallback.
-// Set VITE_WORKER_URL in Cloudflare Pages → Settings → Environment variables
-const WORKER_URL =
-  import.meta.env.VITE_WORKER_URL ||
-  'https://pollyglot-worker.ahmadi08zahra.workers.dev'
+// The /api/translate endpoint is a Cloudflare Pages Function (a Cloudflare Worker
+// under the hood) that hides the OpenRouter API key. Same domain as the frontend
+// → no CORS issues, no env var to configure.
+const API_URL = '/api/translate'
 
 function App() {
   const [view, setView] = useState('translate')
@@ -25,7 +24,7 @@ function App() {
     setError('')
 
     try {
-      const response = await fetch(`${WORKER_URL}/translate`, {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
