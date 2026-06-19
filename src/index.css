@@ -1,0 +1,34 @@
+/* Google Fonts — Poppins for clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --navy: #0e1363;
+  --blue: #2d5be3;
+  --blue-hover: #1e4ed8;
+  --input-bg: #f0f4fb;
+  --input-border: #dde5f5;
+  --text-dark: #2d3748;
+  --text-muted: #a0aec0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #dde5f4;
+  min-height: 100vh;
+  color: var(--text-dark);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}

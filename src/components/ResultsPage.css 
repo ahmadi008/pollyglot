@@ -1,0 +1,67 @@
+/* Results card — same shell as .card in TranslateForm.css */
+.results-card {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  border: 2px solid #a8c0e8;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(14, 19, 99, 0.16);
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Body */
+.card-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Text blocks */
+.text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.block-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2d5be3;
+}
+
+.block-content {
+  background: var(--input-bg, #f0f4fb);
+  border: 1px solid var(--input-border, #dde5f5);
+  border-radius: 10px;
+  color: var(--text-dark, #2d3748);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  min-height: 44px;
+  padding: 0.7rem 0.9rem;
+}
+
+/* Start Over button */
+.start-over-btn {
+  width: 100%;
+  background: #2d5be3;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.01em;
+  margin-top: 0.25rem;
+}
+.start-over-btn:hover { background: #1e4ed8; }
+.start-over-btn:active { transform: scale(0.99); }
