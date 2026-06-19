@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import TranslateForm from './components/TranslateForm'
 import ResultsPage from './components/ResultsPage'
-// ✅ No App.css import needed anymore
 
-// 👇 Replace this URL after you create the Cloudflare Worker in Step 4
-const WORKER_URL = 'https://pollyglot.ahmadi08zahra.workers.dev/'
+const WORKER_URL = 'https://pollyglot-worker.ahmadi08zahra.workers.dev/'
 
 function App() {
   const [view, setView] = useState('translate')
