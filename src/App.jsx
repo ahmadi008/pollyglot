@@ -2,7 +2,11 @@ import { useState } from 'react'
 import TranslateForm from './components/TranslateForm'
 import ResultsPage from './components/ResultsPage'
 
-const WORKER_URL = 'https://pollyglot-worker.ahmadi08zahra.workers.dev/'
+// Cloudflare Worker URL — read from Vite env, with the deployed URL as fallback.
+// Set VITE_WORKER_URL in Cloudflare Pages → Settings → Environment variables
+const WORKER_URL =
+  import.meta.env.VITE_WORKER_URL ||
+  'https://pollyglot-worker.ahmadi08zahra.workers.dev'
 
 function App() {
   const [view, setView] = useState('translate')
@@ -16,13 +20,16 @@ function App() {
       setError('Please enter some text to translate.')
       return
     }
+
     setIsLoading(true)
     setError('')
 
     try {
       const response = await fetch(`${WORKER_URL}/translate`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ text: text.trim(), language }),
       })
 
@@ -50,14 +57,7 @@ function App() {
   }
 
   return (
-    <div style={{
-      width: '100%',
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '1.5rem',
-    }}>
+    <div>
       {view === 'translate' ? (
         <TranslateForm
           onTranslate={handleTranslate}
