@@ -5,7 +5,7 @@ import ResultsPage from './components/ResultsPage'
 // The /api/translate endpoint is a Cloudflare Pages Function (a Cloudflare Worker
 // under the hood) that hides the OpenRouter API key. Same domain as the frontend
 // → no CORS issues, no env var to configure.
-const API_URL = '/api/translate'
+const API_URL = 'https://pollyglot-api.ahmadi08zahra.workers.dev/translate'
 
 function App() {
   const [view, setView] = useState('translate')
