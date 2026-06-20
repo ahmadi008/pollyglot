@@ -1,5 +1,4 @@
-// Cloudflare Worker — PollyGlot secure translation proxy
-// Hides the OpenRouter API key from the browser and returns a clean translation string.
+
 
 export default {
   async fetch(request, env, ctx) {
